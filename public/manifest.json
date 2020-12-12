@@ -1,0 +1,16 @@
+{
+    "name": "AgroDirecto ",
+    "short_name": "AG",
+    "start_url": "./",
+    "theme_color": "#fff",
+    "orientation": "portrait",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Prototipo de la aplicación para la asignatura de PCS 2020-2 POLIJIC.",
+    "icons": [{
+        "src": "img/favIconAgroDirecto.png",
+        "sizes": "616x368",
+        "type": "image/png"
+    }]
+}

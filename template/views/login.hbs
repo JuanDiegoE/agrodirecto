@@ -1,0 +1,22 @@
+{{>header}}
+<div class="container"  style="background-color: #c0ee71c4; margin-top: 50px; border-radius: 20px;">
+  <div class="jumbotron jumbotron-fluid text-center" style="background-color: #c0ee7100;">
+      <a href="/">
+        <img src="img/logoTransparente.png" style="width: 20%;" >
+      </a>
+  </div>
+  <h2 class="text-center">Iniciar sesión</h2>
+  {{{mostrar}}}
+  <form action="/login" method="post" id="logear"></form>
+  <div class="form-group" style="padding: 0px 25px 25px 25px;">
+    <label>Correo o usuario:</label>
+    <input type="text" form="logear" class="form-control" name="correo" value="{{correo}}"
+      placeholder="Correo personal o usuario" required>
+    <label>Contraseña:</label>
+    <input type="password" form="logear" class="form-control" name="password" placeholder="Contraseña" required>
+    <br>
+    <div class="text-center">
+      <button class="btn btn-dark" form="logear">Iniciar sesión</button>      
+    </div>
+  </div>
+  {{>footer}}

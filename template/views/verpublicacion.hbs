@@ -1,0 +1,39 @@
+{{>header}}
+<form action="/editPublication" method="post" id="actualizar" enctype="multipart/form-data"></form>
+<div class="container" style="background-color: #c0ee71c4; margin-top: 50px; border-radius: 20px;">
+  <div class="font-weight-bold text-center">
+    <h1>Ver producto </h1>
+    {{{mostrar}}}
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="jumbotron jumbotron-fluid text-center" style="background-color: #c0ee7100;">
+        <img src="{{image}}" style="width: 50%;"><br>
+        <label>Foto del prducto:</label><br>
+        <div>
+          <h3>Contacto del vendedor</h3>
+          <h5>Nombre:</h5>
+          <input type="text" class="form-control" value="{{usuario}}" required readonly>
+          <h5>Correo:</h5>
+          <input type="text" class="form-control" value="{{correo}}" required readonly>
+          <h5>Telefono:</h5>
+          <input type="text" class="form-control" value="{{tel}}" required readonly>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group" style="padding: 0px 25px 25px 25px;">
+        <label>Nombre producto:</label>
+        <input type="text" form="actualizar" class="form-control" name="nombreProducto" value="{{nombreProducto}}"
+          placeholder="Usuario" required readonly>
+        <label>Precio por Kilo:</label>
+        <input type="text" form="actualizar" class="form-control" name="price" value="{{price}}"
+          placeholder="Nombre completo" required readonly>
+        <label>Descripción:</label>
+        <textarea class="form-control" name="about" rows="3"
+          placeholder="Escriba acá una breve presentación personal." readonly>{{about}}</textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center">
+    {{>footer}}

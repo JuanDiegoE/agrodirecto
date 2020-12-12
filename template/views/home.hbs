@@ -1,0 +1,23 @@
+{{>header}}
+{{#unless agricultor }}
+<h1 class="text-center">Productos en venta</h1>
+<div class="container">
+  {{{mostrar}}}
+  {{{todasPublicaciones lista}}}
+</div>
+{{/unless}}
+{{#if agricultor}}
+{{#if ventas}}
+<h1 class="text-center">Productos en venta</h1>
+<div class="container">
+  {{{mostrar}}}
+  {{{todasPublicaciones lista}}}
+  {{else}}
+  <h1 class="text-center">Mis publicaciones</h1>
+  <div class="container">
+    {{{mostrar}}}
+    {{{misPublicaciones lista user}}}
+    {{/if}}
+  </div>
+  {{/if}}
+  {{>footer}}

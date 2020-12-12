@@ -1,0 +1,46 @@
+{{>header}}
+<div class="container"  style="background-color: #c0ee71c4; margin-top: 50px; border-radius: 20px;">
+  <div class="jumbotron jumbotron-fluid text-center" style="background-color: #c0ee7100;">
+      <a href="/">
+        <img src="img/logoTransparente.png" style="width: 20%;" >
+      </a>
+  </div>
+  <h2 class="text-center">Registrate</h2>
+  {{{mostrar}}}
+  <form action="/registrar" method="post" id="registrar"></form>
+  <div class="form-group" style="padding: 0px 25px 25px 25px;">
+    <label>Nombre:</label>
+    <input type="text" form="registrar" class="form-control" name="nombre" value="{{nombre}}"
+      placeholder="Nombre completo" required>
+    <label>Correo:</label>
+    <input type="email" form="registrar" class="form-control" name="correo" value="{{correo}}"
+      placeholder="Correo personal" required>
+    <label>Usuario:</label>
+    <input type="text" form="registrar" class="form-control" name="usuario" value="{{usuario}}"
+      placeholder="Usuario" required>
+    <label>Contraseña:</label>
+    <input type="password" form="registrar" class="form-control" name="password" placeholder="Contraseña" required>
+    <label>Validar contraseña:</label>
+    <input type="password" form="registrar" class="form-control" name="password2" placeholder="Validar contraseña" required>
+    <label>Tipo de usuario:</label>
+    <select class="form-control" name="tipo" form="registrar">
+      <option value="Agricultor">Agricultor</option>
+      <option value="Cliente" selected>Cliente</option>
+    </select>
+    <br>
+    <div class="text-center">
+      <button class="btn btn-dark" form="registrar">Registrar</button>
+    </div>
+  </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((reg) => {
+            console.log('Service worker registered.', reg);
+          });
+      });
+    }
+  </script>
+  {{!-- Quitar todo lo relacionado con la PWA --}}
+  {{>footer}}

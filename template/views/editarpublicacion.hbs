@@ -1,0 +1,38 @@
+{{>header}}
+<form action="/updatePublication" method="post" id="actualizacion" enctype="multipart/form-data"></form>
+<div class="container" style="background-color: #c0ee71c4; margin-top: 50px; border-radius: 20px;">
+  <h1 class="text-center">Editar producto</h1>
+  {{{mostrar}}}
+  <div class="row">
+    <div class="col">
+      <div class="jumbotron jumbotron-fluid text-center" style="background-color: #c0ee7100; padding: 0;">
+        <label>Foto del producto:</label><br>
+        <img src="{{image}}" style="width: 50%; border: 1px solid black; margin-bottom: 10px; padding: 10px;">
+        <input type="file" form="actualizacion" name="archivo" accept="image/*">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group" style="padding: 0px 25px 25px 25px;">
+        <label>Producto:</label>
+        <input type="text" form="actualizacion" class="form-control" name="nombreProducto" value="{{nombreProducto}}"
+          placeholder="Nombre del producto." required>
+        <label>Precio por Kilo:</label>
+        <input type="text" form="actualizacion" class="form-control" name="precio" value="{{precio}}"
+          placeholder="Precio del producto por Kilo." required>
+        <label>Descripción:</label>
+        <textarea class="form-control" form="actualizacion" name="about" rows="3"
+          placeholder="Escriba acá una breve descripción del producto." required>{{about}}</textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col">
+      <input name="actualizar" type="hidden" value="{{nombreProducto}}" form="actualizacion">
+      <button class="btn btn-dark" style="width: 100%; margin-bottom: 10px;" form="actualizacion">Actualizar producto</button>
+      <form action="/deletePublication" method="post">
+        <input name="eliminar" type="hidden" value="{{nombreProducto}}">
+        <button class="btn btn-danger divi buttoni" style="width: 100%; margin-bottom: 10px;">Eliminar</button>
+      </form>
+    </div>
+  </div>
+  {{>footer}}

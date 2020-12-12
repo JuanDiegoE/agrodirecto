@@ -1,0 +1,44 @@
+{{>header}}
+<form action="/profile" method="post" id="actualizar" enctype="multipart/form-data"></form>
+<form action="/deleteUser" method="post" id="delete" enctype="multipart/form-data"></form>
+<div class="container" style="background-color: #c0ee71c4; margin-top: 50px; border-radius: 20px;">
+  <h1 class="text-center">Datos personales</h1>
+  {{{mostrar}}}
+  <div class="row">
+    <div class="col">
+      <div class="jumbotron jumbotron-fluid text-center" style="background-color: #c0ee7100; padding: 0;">
+        <img src="{{avatar}}" style="width: 50%; border: 1px solid black; margin-bottom: 10px; padding: 10px;"><br>
+        <label>Actualizar foto de perfil:</label><br>
+        <input type="file" form="actualizar" name="archivo" accept="image/*">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group" style="padding: 0px 25px 25px 25px;">
+        <label>Usuario:</label>
+        <input type="text" form="actualizar" class="form-control" name="usuario" value="{{usuario}}"
+          placeholder="Usuario" required readonly>
+        <label>Nombre:</label>
+        <input type="text" form="actualizar" class="form-control" name="nombre" value="{{nombre}}"
+          placeholder="Nombre completo" required>
+        <label>Ubicación:</label>
+        <input type="text" form="actualizar" class="form-control" name="ubicacion" value="{{ubicacion}}"
+          placeholder="Lugar de ubicación.">
+        <label>Correo:</label>
+        <input type="email" form="actualizar" class="form-control" name="correo" value="{{correo}}"
+          placeholder="Correo personal" required>
+        <label>Teléfono:</label>
+        <input type="tel" pattern="[0-9]{7,10}" title="Por favor ingrese un número teléfonico de 7 a 10 dígitos." form="actualizar" class="form-control" name="tel"
+          value="{{tel}}" placeholder="Teléfono de contacto.">
+        <label>Descripción:</label>
+        <textarea class="form-control" name="about" rows="3" form="actualizar"
+          placeholder="Escriba acá una breve presentación personal.">{{about}}</textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col">
+      <button class="btn btn-dark" style="width: 100%; margin-bottom: 10px;" form="actualizar">Actualizar</button>
+      <button class="btn btn-danger" style="width: 100%; margin-bottom: 10px;" form="delete">Eliminar usuario</button>
+    </div>
+  </div>
+  {{>footer}}

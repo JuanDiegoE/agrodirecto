@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.herokuapp.guardiansoft.twa",
+    "sha256_cert_fingerprints": [
+      "90:8A:59:57:40:0C:BE:F9:69:49:8F:8B:21:D3:02:7A:55:50:04:7E:4C:F5:AB:73:E2:95:8D:AD:5E:00:0D:25"
+    ]
+  }
+}]
